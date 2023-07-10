@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-
-# prerequisites: as described in https://alphacephei.com/vosk/install and also python module `sounddevice` (simply run command `pip install sounddevice`)
-# Example usage using Dutch (nl) recognition model: `python test_microphone.py -m nl`
-# For more help run: `python test_microphone.py -h`
-
 import argparse
 import queue
 import sys
@@ -31,7 +25,6 @@ with sd.RawInputStream(samplerate=samplerate, blocksize=40000, device=device[0],
         data = q.get()
         if rec.AcceptWaveform(data):
             a = json.loads(rec.Result())['text']
-            #print(a)
+            print(a)
         # else:
         #     print(rec.PartialResult())
-
