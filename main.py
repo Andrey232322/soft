@@ -33,9 +33,6 @@ def reco(data,vectorizer,clf):
     exec(func + '()')
 
 
-
-
-
 def main():
     vectorizer = CountVectorizer()
     vectors = vectorizer.fit_transform(list(words.data_set.keys()))
